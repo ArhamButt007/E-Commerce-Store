@@ -7,6 +7,7 @@ import Item from '../Components/Item/Item';
 const ShopCategory = (props) => {
 
   const {all_products} = useContext(HomeContext);
+  console.log(all_products);
   return (
     <div className='shop-category'>
       <img className='shopcategory-banner' src={props.banner} alt="" />
@@ -18,6 +19,9 @@ const ShopCategory = (props) => {
           Sort by <img src={dropdown_icon} alt="" />
         </div>
       </div>
+
+      {/* Displaying products based on category */}
+      
       <div className="shopcategory-products">
         {all_products.map((item,i) => {
           if(props.category === item.category){
